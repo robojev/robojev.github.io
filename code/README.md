@@ -2,7 +2,7 @@
 
 **RoboJev: Confidence-Gated Structured Decision Making for Long-Horizon Embodied Agents**
 
-[Project page](https://robojev.github.io) · [Paper (PDF)](https://robojev.github.io/static/pdf/robojev.pdf) · [Code](https://github.com/robojev/robojev)
+[Project page](https://robojev.github.io) · [Paper (PDF)](https://robojev.github.io/static/pdf/robojev.pdf) · [Code](https://github.com/robojev/robojev.github.io/tree/main/code)
 
 Author: **Guobao Tegong** (Institute of Embodied Intelligence, Happy Heroes University)
 
