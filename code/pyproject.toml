@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robojev"
+version = "0.1.0"
+description = "Confidence-gated structured decisions for long-horizon embodied agents"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Guobao Tegong", email = "guobao@happyheroes.edu" }]
+dependencies = []
+
+[project.optional-dependencies]
+sim = ["mujoco", "pillow", "numpy"]
+
+[project.urls]
+Homepage = "https://robojev.github.io"
+Paper = "https://robojev.github.io/static/pdf/robojev.pdf"
+Repository = "https://github.com/robojev/robojev"
+
+[tool.setuptools.packages.find]
+include = ["robojev*"]
