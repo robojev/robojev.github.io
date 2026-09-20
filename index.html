@@ -3,48 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Domain for sale · RoboJev</title>
-  <meta name="description" content="RoboJev: structured decisions for long-horizon embodied agents. Domain for sale.">
+  <title>RoboJev | Confidence-Gated Structured Decisions for Embodied Agents</title>
+  <meta name="description" content="RoboJev: Confidence-Gated Structured Decision Making for Long-Horizon Embodied Agents. Project page, paper, and code.">
+  <meta property="og:title" content="RoboJev">
+  <meta property="og:description" content="Confidence-Gated Structured Decision Making for Long-Horizon Embodied Agents">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&family=Source+Sans+3:wght@400;550;650;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #10242c;
-      --muted: #5b6b73;
-      --line: #d7e0e4;
-      --paper: #f4f7f8;
-      --panel: #ffffff;
-      --accent: #0f6d6a;
-      --accent-soft: #d9efed;
-      --sale: #111111;
+      --ink: #1a1a1a;
+      --muted: #555;
+      --line: #ddd;
+      --bg: #fff;
+      --soft: #f7f7f7;
+      --link: #0b57d0;
+      --chip: #111;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
       color: var(--ink);
-      background: var(--paper);
-      font-family: "Manrope", sans-serif;
+      background: var(--bg);
+      font-family: "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
       line-height: 1.55;
+      font-size: 17px;
     }
-    a { color: inherit; }
-    img { display: block; max-width: 100%; height: auto; }
+    a { color: var(--link); }
+    img { max-width: 100%; height: auto; display: block; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
-    /* ---- first viewport: keep the original sale page ---- */
+    /* Keep the original sale notice as the first viewport */
     .sale {
       min-height: 100vh;
       display: grid;
       place-items: center;
       text-align: center;
       background: #fff;
-      color: var(--sale);
+      color: #111;
       font-family: Georgia, "Times New Roman", serif;
       padding: 2rem;
+      border-bottom: 1px solid #eee;
     }
     .sale h1 {
-      margin: 0 0 0.4em;
+      margin: 0 0 0.35em;
       font-size: clamp(3rem, 8vw, 7rem);
       line-height: 1.05;
       font-weight: 700;
@@ -54,227 +57,192 @@
       font-size: clamp(2rem, 5vw, 4.5rem);
       line-height: 1.2;
     }
-    .sale a { color: inherit; text-decoration: underline; text-underline-offset: 0.12em; }
+    .sale a { color: inherit; }
     .sale-hint {
-      margin-top: 2.5rem;
-      font-family: "Manrope", sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
+      margin-top: 2.4rem;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: #888;
     }
-    .sale-hint a {
-      color: #666;
-      text-decoration: none;
-      border-bottom: 1px solid #ccc;
-    }
+    .sale-hint a { color: #666; text-decoration: none; border-bottom: 1px solid #ccc; }
 
-    /* ---- project ---- */
-    .project {
-      position: relative;
-      overflow: clip;
-      background:
-        radial-gradient(1200px 500px at 10% -10%, rgba(15, 109, 106, 0.12), transparent 60%),
-        radial-gradient(900px 420px at 100% 0%, rgba(16, 36, 44, 0.08), transparent 55%),
-        linear-gradient(180deg, #eef4f5 0%, var(--paper) 28%, #eef2f4 100%);
-    }
-    .shell {
-      width: min(1080px, calc(100% - 2.5rem));
+    .page { width: min(980px, calc(100% - 2rem)); margin: 0 auto; padding: 3.5rem 0 4.5rem; }
+
+    .hero { text-align: center; padding-top: 0.5rem; }
+    .title {
       margin: 0 auto;
-      padding: 4.5rem 0 5.5rem;
-    }
-
-    .brand {
-      font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(3.4rem, 8vw, 6rem);
+      max-width: 18em;
+      font-family: "Source Serif 4", Georgia, serif;
       font-weight: 700;
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      margin: 0;
-    }
-    .tagline {
-      margin: 1rem 0 0;
-      max-width: 38rem;
-      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
-      font-weight: 500;
-      color: var(--muted);
+      font-size: clamp(1.7rem, 3.4vw, 2.35rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
     }
     .authors {
-      margin: 1.4rem 0 0;
-      font-size: 1.05rem;
+      margin: 1.15rem 0 0.35rem;
+      font-size: 1.12rem;
     }
-    .authors strong { font-weight: 700; }
+    .authors a { color: var(--ink); text-decoration: none; border-bottom: 1px solid #bbb; }
+    .affil {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .venue {
+      margin: 0.55rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-    .links {
+    .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 1.8rem 0 0;
+      justify-content: center;
+      gap: 0.65rem;
+      margin: 1.5rem 0 0.4rem;
     }
-    .chip {
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.7rem 1rem;
-      border: 1px solid var(--line);
-      background: var(--panel);
+      gap: 0.4rem;
+      padding: 0.55rem 0.95rem;
       border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: 600;
+      background: var(--chip);
+      color: #fff !important;
       text-decoration: none;
-      box-shadow: 0 1px 0 rgba(16, 36, 44, 0.04);
+      font-weight: 650;
+      font-size: 0.95rem;
     }
-    .chip span {
-      color: var(--accent);
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .chip.soon {
-      opacity: 0.88;
-      cursor: default;
+    .btn.secondary {
+      background: #fff;
+      color: var(--ink) !important;
+      border: 1px solid #bbb;
     }
 
-    section { margin-top: 3.6rem; }
+    section { margin-top: 2.8rem; }
     h2 {
-      margin: 0 0 0.85rem;
-      font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(1.6rem, 3vw, 2.1rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      margin: 0 0 0.8rem;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.55rem;
+      text-align: center;
     }
-    .lede {
-      margin: 0;
+    .just {
       max-width: 46rem;
-      color: var(--muted);
-      font-size: 1.02rem;
+      margin: 0 auto;
+      text-align: justify;
     }
-    .abstract {
-      margin: 0;
-      max-width: 48rem;
-      font-size: 1.05rem;
+    .center-note {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 0 1rem;
     }
 
     .layers {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1.4rem;
+      gap: 0.9rem;
+      margin-top: 1rem;
     }
     .layer {
-      padding: 1.15rem 1.2rem 1.25rem;
-      background: var(--panel);
+      background: var(--soft);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 10px;
+      padding: 1rem 1.05rem;
     }
-    .layer .kicker {
-      margin: 0 0 0.45rem;
-      color: var(--accent);
+    .layer .k {
+      margin: 0 0 0.3rem;
       font-size: 0.75rem;
-      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      color: #666;
+      font-weight: 700;
     }
-    .layer h3 {
-      margin: 0 0 0.45rem;
-      font-size: 1.15rem;
-    }
-    .layer p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+    .layer h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+    .layer p { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.85rem;
-      margin-top: 1.4rem;
-    }
-    .stat {
-      padding: 1rem 1.05rem;
-      background: var(--accent-soft);
-      border-radius: 16px;
-    }
-    .stat b {
-      display: block;
-      font-family: "Fraunces", Georgia, serif;
-      font-size: 1.55rem;
-      line-height: 1;
-      margin-bottom: 0.35rem;
-    }
-    .stat span {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .episode + .episode { margin-top: 2.2rem; }
-    .episode h3 {
-      margin: 0 0 0.35rem;
-      font-size: 1.15rem;
-    }
-    .episode .meta {
-      margin: 0 0 0.9rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
     .strip {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0.85rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.55rem;
+      margin-top: 0.8rem;
     }
+    .strip.four { grid-template-columns: repeat(4, 1fr); }
+    .strip.two { grid-template-columns: repeat(2, 1fr); max-width: 520px; margin-left: auto; margin-right: auto; }
     figure {
       margin: 0;
-      background: var(--panel);
+      background: #fff;
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 8px;
       overflow: hidden;
     }
     figure img {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16/9;
       object-fit: cover;
       background: #111;
     }
     figcaption {
-      padding: 0.75rem 0.85rem 0.95rem;
-      font-size: 0.86rem;
+      padding: 0.55rem 0.65rem 0.7rem;
+      font-size: 0.82rem;
       color: var(--muted);
+      line-height: 1.35;
     }
-    figcaption strong {
-      display: block;
-      color: var(--ink);
-      margin-bottom: 0.2rem;
-      font-weight: 650;
-    }
+    figcaption strong { color: var(--ink); display: block; margin-bottom: 0.15rem; }
 
-    .cite {
-      margin-top: 1.2rem;
+    .table-wrap { overflow-x: auto; margin: 1rem auto 0; max-width: 720px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.55rem 0.7rem;
+      text-align: center;
+    }
+    th { background: var(--soft); font-weight: 700; }
+    td:first-child, th:first-child { text-align: left; }
+    tr.ours td { background: #f3f8ff; font-weight: 650; }
+
+    .bib {
+      position: relative;
+      background: #111;
+      color: #eee;
+      border-radius: 10px;
       padding: 1rem 1.1rem;
-      background: #10242c;
-      color: #e8eef0;
-      border-radius: 14px;
       overflow-x: auto;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.84rem;
-      line-height: 1.55;
+      font-size: 0.86rem;
+      line-height: 1.5;
       white-space: pre;
+    }
+    .copy {
+      position: absolute;
+      top: 0.65rem;
+      right: 0.65rem;
+      border: 0;
+      background: #333;
+      color: #fff;
+      border-radius: 6px;
+      padding: 0.35rem 0.6rem;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.8rem;
     }
 
     footer {
-      margin-top: 3.5rem;
-      padding-top: 1.4rem;
+      margin-top: 3rem;
+      padding-top: 1.2rem;
       border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 0.9rem;
+      text-align: center;
     }
 
     @media (max-width: 820px) {
-      .layers, .stats { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 560px) {
-      .shell { width: min(100% - 1.5rem, 1080px); padding-top: 3rem; }
-      .layers, .stats { grid-template-columns: 1fr; }
+      .layers { grid-template-columns: 1fr; }
+      .strip, .strip.four { grid-template-columns: repeat(2, 1fr); }
       .sale p { font-size: clamp(1.5rem, 7vw, 2.4rem); }
     }
   </style>
@@ -285,172 +253,186 @@
       <h1>Domain for sale.</h1>
       <p>Pay me $50</p>
       <p>Contact: <a href="mailto:orxjtvmboedal@mail.com">orxjtvmboedal@mail.com</a></p>
-      <p class="sale-hint"><a href="#robojev">Scroll for RoboJev ↓</a></p>
+      <p class="sale-hint"><a href="#paper">Scroll for the paper ↓</a></p>
     </div>
   </section>
 
-  <main id="robojev" class="project">
-    <div class="shell">
-      <header>
-        <p class="brand">RoboJev</p>
-        <p class="tagline">
-          Structured System-1 decisions for long-horizon embodied agents —
-          reason rarely, decide often, act with skills.
-        </p>
-        <p class="authors">
-          <strong>果宝特攻</strong>
-        </p>
-        <div class="links">
-          <span class="chip soon">Paper <span>Coming soon</span></span>
-          <span class="chip soon">Code <span>Coming soon</span></span>
-          <a class="chip" href="#gallery">Demo Gallery</a>
-          <a class="chip" href="#method">Method</a>
-        </div>
-      </header>
+  <main id="paper" class="page">
+    <header class="hero">
+      <h1 class="title">
+        RoboJev: Confidence-Gated Structured Decision Making for Long-Horizon Embodied Agents
+      </h1>
+      <p class="authors">
+        <a href="mailto:guobao@happyheroes.edu">Guobao Tegong</a>
+      </p>
+      <p class="affil">Institute of Embodied Intelligence, Happy Heroes University</p>
+      <p class="venue">Preprint, 2026</p>
+      <div class="buttons">
+        <a class="btn" href="static/pdf/robojev.pdf">📄 Paper</a>
+        <a class="btn" href="https://github.com/robojev/robojev">💻 Code</a>
+        <a class="btn secondary" href="#results">Results</a>
+        <a class="btn secondary" href="#bibtex">BibTeX</a>
+      </div>
+    </header>
 
-      <section aria-labelledby="abs">
-        <h2 id="abs">Abstract</h2>
-        <p class="abstract">
-          Long-horizon robot agents repeatedly ask the same closed questions —
-          Did the grasp hold? Did the skill finish? Retry or replan?
-          Today those questions often trigger another LLM or VLM call.
-          <strong>RoboJev</strong> splits the stack into Reasoning, Decision, and Action:
-          an LLM plans only when the world genuinely needs open-ended thought,
-          a Jev-style System-1 layer returns typed judgments with confidence,
-          and skill controllers execute. Low-confidence decisions escalate;
-          high-confidence retries stay cheap.
-        </p>
-      </section>
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p class="just">
+        Long-horizon embodied agents repeatedly face closed-form questions during execution:
+        Did the grasp hold? Did the skill succeed? Should the controller retry, replan, or escalate?
+        Current stacks often answer these questions by invoking an LLM or VLM at every step,
+        even when the answer space is tiny. We present <strong>RoboJev</strong>, a three-layer
+        architecture that separates open-ended reasoning from high-frequency structured decisions.
+        A Reasoning layer writes or revises skill plans only when needed. A Decision layer returns
+        typed judgments with confidence in the style of System-One models such as Jev. An Action
+        layer executes skills. Confidence-gated escalation routes only uncertain cases back to
+        Reasoning. In a symbolic kitchen task with MuJoCo display rendering, RoboJev completes
+        clean, slip, ambiguous-sensor, and early door-close episodes while cutting reasoner calls
+        versus a replan-every-step baseline.
+      </p>
+    </section>
 
-      <section id="method" aria-labelledby="meth">
-        <h2 id="meth">Method</h2>
-        <p class="lede">
-          One symbolic kitchen task — put the apple in the fridge and close the door —
-          is enough to exercise the loop. Perception for control is state text;
-          rendered frames are for display only.
-        </p>
-        <div class="layers">
-          <article class="layer">
-            <p class="kicker">Layer 1</p>
-            <h3>Reasoning</h3>
-            <p>LLM/VLM writes or replaces a skill plan. Called at start, on replan, and on confidence-gated escalation.</p>
-          </article>
-          <article class="layer">
-            <p class="kicker">Layer 2</p>
-            <h3>Decision</h3>
-            <p>After every skill: grasp_ok, skill_done, failure type, recovery action — parallel noul / choice answers with confidence.</p>
-          </article>
-          <article class="layer">
-            <p class="kicker">Layer 3</p>
-            <h3>Action</h3>
-            <p>Skill controllers run pick, move, open, place, and close. No image input is required for control.</p>
-          </article>
-        </div>
-        <div class="stats">
-          <div class="stat"><b>1</b><span>reasoner call on a clean run</span></div>
-          <div class="stat"><b>retry</b><span>slip handled without replanning</span></div>
-          <div class="stat"><b>escalate</b><span>ambiguous sensors call the LLM</span></div>
-          <div class="stat"><b>replan</b><span>door closes before place</span></div>
-        </div>
-      </section>
+    <section id="method">
+      <h2>Method</h2>
+      <p class="center-note">Reason rarely. Decide often. Act with skills.</p>
+      <div class="layers">
+        <article class="layer">
+          <p class="k">Layer 1</p>
+          <h3>Reasoning</h3>
+          <p>LLM/VLM proposes or replaces a skill plan at start, on replan, and after low-confidence escalation.</p>
+        </article>
+        <article class="layer">
+          <p class="k">Layer 2</p>
+          <h3>Decision</h3>
+          <p>After every skill: grasp_ok, skill_done, failure type, recovery — typed answers with confidence.</p>
+        </article>
+        <article class="layer">
+          <p class="k">Layer 3</p>
+          <h3>Action</h3>
+          <p>Skill controllers run pick / move / open / place / close. Control uses state text, not pixels.</p>
+        </article>
+      </div>
+    </section>
 
-      <section id="gallery" aria-labelledby="gal">
-        <h2 id="gal">Simulation Gallery</h2>
-        <p class="lede">
-          Frames rendered with MuJoCo on an NVIDIA H800. The agent never reads these pixels;
-          they mirror the same symbolic state used by Decision.
-        </p>
+    <section id="demo">
+      <h2>Demo</h2>
+      <p class="center-note">
+        MuJoCo frames are for display. The agent never reads these images.
+      </p>
+      <div class="strip">
+        <figure>
+          <img src="static/images/00_start.png" alt="Start">
+          <figcaption><strong>Start</strong>Apple on the counter</figcaption>
+        </figure>
+        <figure>
+          <img src="static/images/01_pick.png" alt="Pick">
+          <figcaption><strong>pick</strong>continue</figcaption>
+        </figure>
+        <figure>
+          <img src="static/images/03_open.png" alt="Open">
+          <figcaption><strong>open</strong>continue</figcaption>
+        </figure>
+        <figure>
+          <img src="static/images/04_place.png" alt="Place">
+          <figcaption><strong>place</strong>continue</figcaption>
+        </figure>
+        <figure>
+          <img src="static/images/05_close.png" alt="Close">
+          <figcaption><strong>close</strong>goal reached</figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <div class="episode">
-          <h3>Clean execution</h3>
-          <p class="meta">Reasoner ×1 · Decision ×5 · gates: continue ×5</p>
-          <div class="strip">
-            <figure>
-              <img src="assets/clean/00_start.png" alt="Start state with apple on the counter">
-              <figcaption><strong>Start</strong>Apple on the counter, fridge closed.</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/clean/01_pick.png" alt="Gripper holding the apple">
-              <figcaption><strong>pick</strong>Grasp succeeds · continue</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/clean/03_open.png" alt="Fridge door open while holding the apple">
-              <figcaption><strong>open</strong>Door opens · continue</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/clean/04_place.png" alt="Apple placed inside the fridge">
-              <figcaption><strong>place</strong>Apple inside · continue</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/clean/05_close.png" alt="Fridge closed after placing the apple">
-              <figcaption><strong>close</strong>Goal reached · continue</figcaption>
-            </figure>
-          </div>
-        </div>
+    <section id="results">
+      <h2>Experimental Results</h2>
+      <p class="just">
+        Task: put an apple into a fridge and close the door. Decision uses a local System-One
+        stand-in with Jev's answer schema; Reasoning uses a hosted chat model. The baseline
+        asks the reasoner after every skill. Rendered on one NVIDIA H800.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Episode</th>
+              <th>RoboJev reasoner</th>
+              <th>Baseline reasoner</th>
+              <th>Decision calls</th>
+              <th>Behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="ours"><td>Clean</td><td>1</td><td>6</td><td>5</td><td>continue ×5</td></tr>
+            <tr class="ours"><td>Slip</td><td>1</td><td>7</td><td>6</td><td>local retry</td></tr>
+            <tr class="ours"><td>Ambiguous sensors</td><td>2</td><td>6</td><td>5</td><td>escalate</td></tr>
+            <tr class="ours"><td>Door closes early</td><td>2</td><td>8</td><td>7</td><td>replan</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="strip four" style="margin-top:1.2rem">
+        <figure>
+          <img src="static/images/slip_fail.png" alt="Slip">
+          <figcaption><strong>Slip</strong>retry without replanning</figcaption>
+        </figure>
+        <figure>
+          <img src="static/images/slip_ok.png" alt="Retry ok">
+          <figcaption><strong>Retry</strong>grasp recovers</figcaption>
+        </figure>
+        <figure>
+          <img src="static/images/escalate.png" alt="Escalate">
+          <figcaption><strong>Ambiguous</strong>low confidence → escalate</figcaption>
+        </figure>
+        <figure>
+          <img src="static/images/lid_block.png" alt="Replan">
+          <figcaption><strong>Blocked place</strong>high confidence → replan</figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <div class="episode">
-          <h3>Slip → local retry</h3>
-          <p class="meta">Reasoner ×1 · Decision recovers with retry, no escalation</p>
-          <div class="strip">
-            <figure>
-              <img src="assets/slip/01_pick.png" alt="Failed grasp after slipping">
-              <figcaption><strong>pick #1</strong>Fingers slip · retry</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/slip/02_pick.png" alt="Successful second grasp">
-              <figcaption><strong>pick #2</strong>Grasp holds · continue</figcaption>
-            </figure>
-          </div>
-        </div>
+    <section id="limitations">
+      <h2>Limitations &amp; Future Work</h2>
+      <p class="just">
+        This preprint is intentionally minimal. The world is symbolic; Decision is a
+        schema-compatible local model unless a hosted System-One API is provided; and we do not
+        claim EDBench-scale evaluation, real-robot transfer, or learned calibration.
+        Failure modes include over-eager escalation, brittle LLM plan schemas, and display
+        scenes that overstate geometric fidelity. Future work includes training Decision on
+        robot traces, evaluating on standard embodied benchmarks, closing the loop with real
+        sensors, and studying when confidence is trustworthy enough to suppress LLM calls safely.
+      </p>
+    </section>
 
-        <div class="episode">
-          <h3>Ambiguous sensors → escalate</h3>
-          <p class="meta">Reasoner ×2 · low confidence routes back to Reasoning</p>
-          <div class="strip">
-            <figure>
-              <img src="assets/ambiguous/03_open.png" alt="Open fridge under conflicting sensors">
-              <figcaption><strong>open</strong>Cameras disagree · escalate</figcaption>
-            </figure>
-          </div>
-        </div>
+    <section id="bibtex">
+      <h2>Citation</h2>
+      <div class="bib">
+        <button class="copy" type="button" onclick="copyBib()">Copy</button>
+        <code id="bib">@misc{tegong2026robojev,
+  title={RoboJev: Confidence-Gated Structured Decision Making for Long-Horizon Embodied Agents},
+  author={Tegong, Guobao},
+  year={2026},
+  howpublished={\url{https://robojev.github.io}},
+  note={Preprint}
+}</code>
+      </div>
+    </section>
 
-        <div class="episode">
-          <h3>Door closes early → replan</h3>
-          <p class="meta">Reasoner ×2 · high-confidence replan, then finish</p>
-          <div class="strip">
-            <figure>
-              <img src="assets/lid/04_place.png" alt="Place blocked because the fridge door is closed">
-              <figcaption><strong>place</strong>Fridge closed · replan</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/lid/05_open.png" alt="Fridge reopened after replanning">
-              <figcaption><strong>open</strong>New plan · continue</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/lid/06_place.png" alt="Apple placed after reopening the fridge">
-              <figcaption><strong>place</strong>Recovered · continue</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="cite">
-        <h2 id="cite">Citation</h2>
-        <p class="lede">Paper and code will appear here when ready.</p>
-        <div class="cite">@misc{robojev2026,
-  title        = {RoboJev: Structured Decisions for Embodied Agents},
-  author       = {果宝特攻},
-  year         = {2026},
-  note         = {Coming soon},
-  howpublished = {\url{https://robojev.github.io}}
-}</div>
-      </section>
-
-      <footer>
-        RoboJev · 果宝特攻 · Still for sale above for $50 ·
-        <a href="mailto:orxjtvmboedal@mail.com">orxjtvmboedal@mail.com</a>
-      </footer>
-    </div>
+    <footer>
+      Still for sale above for $50 ·
+      <a href="mailto:orxjtvmboedal@mail.com">orxjtvmboedal@mail.com</a>
+      · <a href="static/pdf/robojev.pdf">PDF</a>
+      · <a href="https://github.com/robojev/robojev">Code</a>
+    </footer>
   </main>
+
+  <script>
+    function copyBib() {
+      const text = document.getElementById('bib').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy');
+        btn.textContent = 'Copied';
+        setTimeout(() => btn.textContent = 'Copy', 1200);
+      });
+    }
+  </script>
 </body>
 </html>
