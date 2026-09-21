@@ -18,7 +18,7 @@ sim = ["mujoco", "pillow", "numpy"]
 [project.urls]
 Homepage = "https://robojev.github.io"
 Paper = "https://robojev.github.io/static/pdf/robojev.pdf"
-Repository = "https://github.com/robojev/robojev"
+Repository = "https://github.com/robojev/robojev.github.io/tree/main/code"
 
 [tool.setuptools.packages.find]
 include = ["robojev*"]
